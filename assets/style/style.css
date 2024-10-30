@@ -1,0 +1,248 @@
+/* ================== GENERAL=================================+ */
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+:root {
+    --color: #ccc;
+    --color1: black;
+    --color2: skyblue;
+    --color3: white;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    margin-block: 0;
+
+    outline: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 30px;
+    padding: 20px 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: var(--color1);
+}
+
+.buton {
+    border: 1px solid var(--color);
+    border-radius: 15px;
+    padding: 10px 15px;
+    /* margin: 20px 0; */
+    cursor: pointer;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    font-weight: 300;
+    display: inline-block;
+}
+
+.buton:hover {
+    color: var(--color3);
+    background: var(--color1);
+}
+
+.container-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 50px auto; */
+    padding: 25px;
+}
+
+.section-1,
+.section-2,
+.contacts {
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.082);
+}
+
+/* =============================== */
+/* ==========HEADER==================== */
+header {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    min-height: 100vh;
+}
+
+.header-image {
+    background: url(../img/banner.jpg) right/cover;
+}
+
+/* ============== SECTION-1 ================== */
+.section-1 {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    min-height: 400px;
+}
+
+.section-1 .contenair-img {
+    background: url(../img/img-left.jpg) center/cover;
+    /* background: url(../img/banner.jpg) right/cover;
+    background: red; */
+}
+
+/* ============== SECTION-2 ================== */
+.section-2 {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    min-height: 400px;
+}
+
+.section-2 .contenair-img {
+    background: url(../img/img-right.jpg) center/cover;
+}
+
+/* ================== CONTACTS============= */
+.contacts {
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+.contacts ::after {
+    content: "";
+    width: 90%;
+    height: 1px;
+    background: var(--color);
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.formulaire {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100px 220px;
+    grid-template-areas:
+        "nam emai"
+        "mess mess";
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+    gap: 10px;
+}
+
+.name {
+    grid-area: nam;
+}
+
+.email {
+    grid-area: emai;
+}
+
+.message {
+    grid-area: mess;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    margin: 20px 0 40px;
+    border-radius: 4px;
+    border: 1px solid var(--color);
+    padding: 10px;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border: 2px solid var(--color2);
+}
+
+textarea {
+    resize: none;
+    height: 180px;
+}
+
+/* ===================== FOOTER ================= */
+footer {
+    /* width: 80%; */
+    margin: 40px auto;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 33%;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+footer a {
+    border: 1px solid var(--color);
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+footer a:hover {
+    color: var(--color2);
+}
+
+/* ================ MEDIA QUERIES ================= */
+@media screen and (max-width:650px) {
+    body {
+        background: rebeccapurple
+    }
+
+    header,
+    .section-1,
+    .section-2 {
+        display: block;
+
+    }
+
+    header {
+        height: auto;
+        min-height: 0;
+    }
+
+    .header-image {
+        height: 50vh;
+        margin-top: 20px;
+    }
+
+    .section-1,
+    .section-2 {
+        padding: 10px;
+        min-height: 0px;
+    }
+
+    .contenair-img {}
+}
